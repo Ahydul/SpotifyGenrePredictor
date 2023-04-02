@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 
+require('dotenv').config();
+// console.log(process.env.SPOTIFY_SECRET_KEY);
+
+
 var app = express();
 
 // view engine setup
