@@ -7,10 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-
-require('dotenv').config();
-// console.log(process.env.SPOTIFY_SECRET_KEY);
-
+var spotifyApi = require('./controllers/spotify');
 
 var app = express();
 
