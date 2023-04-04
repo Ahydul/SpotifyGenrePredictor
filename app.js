@@ -5,7 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var playlistsRouter = require('./routes/playlists');
+var tracksRouter = require('./routes/tracks');
 var usersRouter = require('./routes/users');
+
 
 var spotifyApi = require('./controllers/spotify');
 
@@ -22,7 +25,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/playlists', playlistsRouter);
+app.use('/tracks', tracksRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

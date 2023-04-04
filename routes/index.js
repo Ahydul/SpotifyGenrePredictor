@@ -16,7 +16,6 @@ router.post('/',async function(req, res, next) {
     limit: 3,
   });
 
-
   // Get playlist's tracks
   var detailedPlaylists = [];
 
@@ -42,7 +41,7 @@ router.post('/',async function(req, res, next) {
     }
   }
 
-  res.json(detailedPlaylists);
+  res.json(detailedPlaylist);
 });
 
 router.post('/playlists',async function(req, res, next) {
@@ -80,7 +79,7 @@ router.post('/playlists',async function(req, res, next) {
     }
   }
 
-  res.render('playlists', { title: 'Playlists de: ', name: user});
+  res.render('playlists', { title: 'Playlists de: ', name: user, playlistsUser: playlists.body.items});
 });
 
 module.exports = router;

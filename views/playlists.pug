@@ -2,3 +2,9 @@ extends layout
 
 block content
   h1= title + name
+  form(action="/tracks", method="post") 
+    each playlist in playlistsUser
+      div.row
+        input(type="radio", id=playlist.id, value=playlist.id, name='playlist')
+        label(for=playlist.id) Nombre de la playlist: #{playlist.name} <br/> Id: #{playlist.id} <br/> Total de canciones: #{playlist.tracks.total}
+    input(type="submit", value="Ir a la playlist")
