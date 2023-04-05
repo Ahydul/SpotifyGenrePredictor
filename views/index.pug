@@ -1,13 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  //- p Welcome to #{title}
-  //- form(action="/", method="post") 
-  //-   input(type="text", name="user")
-  //-   input(type="submit", value="Buscar")
+  h1 Welcome to #{title}
+  form(action="/", method="post") 
+    input(type="text", name="user")
+    input(type="submit", value="Buscar")
 
-  p cuando quieres ver que se pasa usa este
+  p Indica el nombre de usuario de spotify
   form(action="/playlists", method="post") 
     input(type="text", name="user")
     input(type="submit", value="Buscar")

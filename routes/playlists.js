@@ -23,12 +23,14 @@ router.post('/playlists',async function(req, res, next) {
         fields: 'items'
       });
 
+
       var playlistsTrackIds = await detailedPlaylist.body.items
         .filter(a=>a.track!=null)
         .map(a =>a.track.id);
 
+  res.render('tracks', { title: 'tracks', playlist: playlist});
       const audioFeatures = await spotifyApi.getAudioFeaturesForTracks(playlistsTrackIds);
-      
+
       // Get track's audio features
 
       detailedPlaylists.push(audioFeatures);

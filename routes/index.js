@@ -4,7 +4,7 @@ var spotifyApi = require('../controllers/spotify.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Spotify Genre Predictor' });
 });
 
 router.post('/',async function(req, res, next) {
@@ -15,6 +15,14 @@ router.post('/',async function(req, res, next) {
     offset: 1,
     limit: 3,
   });
+
+  // Get a user's playlists
+  var prueba = await spotifyApi.getPlaylist('0rtZkMRnuKQGCyB4mBWiwF', {
+    offset: 1,
+    limit: 3,
+  });
+
+  res.json(prueba.body.tracks.items)
 
   // Get playlist's tracks
   var detailedPlaylists = [];
