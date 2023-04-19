@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1="Playlist: " +  playlistId
+  form(action="/tracks", method="post")
+      each song in songs
+        if (song.track != null)
+          div.row
+            input(type="radio", id=song.id, name='playlist')
+            label(for=song.id) Nombre de la cancion: #{song.track.name} <br/> Nombre del album: #{song.track.album.name} <br/> Nombre de los artistas:#{song.track.artists[0].name}
