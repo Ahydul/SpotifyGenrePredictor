@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var playlistsRouter = require('./routes/playlists');
 var tracksRouter = require('./routes/tracks');
 var usersRouter = require('./routes/users');
+var audioFeaturesRouter = require('./routes/audio_features');
 
 
 var spotifyApi = require('./controllers/spotify');
@@ -28,6 +29,7 @@ app.use('/', indexRouter);
 app.use(playlistsRouter);
 app.use(tracksRouter);
 app.use('/users', usersRouter);
+app.use(audioFeaturesRouter);
 
 
 // catch 404 and forward to error handler

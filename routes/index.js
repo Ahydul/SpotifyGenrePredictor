@@ -16,13 +16,6 @@ router.post('/',async function(req, res, next) {
     limit: 3,
   });
 
-  // Get a user's playlists
-  var prueba = await spotifyApi.getPlaylist('0rtZkMRnuKQGCyB4mBWiwF', {
-    offset: 1,
-    limit: 3,
-  });
-
-  res.json(prueba.body.tracks.items)
 
   // Get playlist's tracks
   var detailedPlaylists = [];
