@@ -5,11 +5,17 @@ var spotifyApi = require('../controllers/spotify.js');
 router.post('/playlists',async function(req, res, next) {
   var user = req.body.user;
 
+  console.log("PUTA MIERDA2");
   // Get a user's playlists
-  var playlists = await spotifyApi.getUserPlaylists(user, {
-    offset: 1,
-    limit: 3,
-  });
+  try {
+    var playlists = await spotifyApi.getUserPlaylists(user, {
+      offset: 1,
+      limit: 3,
+    });
+    
+  } catch (error) {
+    res.render('index', { title: 'Spotify Genre Predictor', error:'Usuario no encontrado' });
+  }
 
 
   // Get playlist's tracks

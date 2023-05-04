@@ -1,23 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+body > * {
+    padding: 20px;
+}
 a {
-  color: #00B7FF;
+    color: #00b7ff;
 }
-input[type=radio] {
-  opacity: 0;
+label {
+    padding-right: 10px;
+}
+input[type="radio"] {
+    opacity: 0;
 }
 
 input[type="radio"] + label {
-  height: 80px;
-  width: 120%;
-  background-color: white;
-  border-radius: 0.5em;
+    height: 80px;
+    width: 120%;
+    background-color: white;
+    border-radius: 0.5em;
 }
 
 input[type="radio"]:checked + label {
-  background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%);
-  color: white;
+    background-image: linear-gradient(310deg, #7928ca 0%, #ff0080 100%);
+    color: white;
+}
+
+.sec {
+    display: flex;
+    flex-direction: column;
 }
